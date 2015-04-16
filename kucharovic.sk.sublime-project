@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": [
+				"bin",
+				"vendor",
+				"app/cache",
+				"app/logs",
+				"web/bundles",
+				"web/assets",
+				"bower_components",
+				"node_modules"
+			],
+			"file_exclude_patterns": [
+				"*.cache",
+				"*.php~",
+				"*.css",
+				"composer.lock",
+				"*.sublime*"
+			]
+		}
+	]
+}

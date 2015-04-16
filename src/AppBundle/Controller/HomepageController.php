@@ -1,0 +1,17 @@
+<?php
+
+namespace AppBundle\Controller;
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class HomepageController extends Controller
+{
+    /**
+     * @Template
+     */
+    public function viewAction()
+    {
+        return [];
+    }
+}
