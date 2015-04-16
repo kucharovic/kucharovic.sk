@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+        <loc>{{ url('homepage') }}</loc>
+   </url>
+   <url>
+        <loc>{{ url('post.list') }}</loc>
+        <lastmod>{{ (posts|last).publishedAt|date(constant('DATE_W3C')) }}</lastmod>
+   </url>
+   {% for post in posts %}
+   <url>
+        <loc>{{ url('post.view', {slug: post.slug}) }}</loc>
+        <lastmod>{{ post.publishedAt|date(constant('DATE_W3C')) }}</lastmod>
+   </url>
+   {% endfor %}
+</urlset>
