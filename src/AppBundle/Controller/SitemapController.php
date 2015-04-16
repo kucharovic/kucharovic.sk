@@ -14,7 +14,7 @@ class SitemapController extends Controller
     {
         $repo = $this->getDoctrine()->getRepository('AppBundle:Post');
         return [
-            'posts' => $repo->findAll()
+            'posts' => $repo->findBy([], ['publishedAt' => 'DESC'])
         ];
     }
 }
