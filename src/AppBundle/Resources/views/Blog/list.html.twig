@@ -1,0 +1,14 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title 'Zoznam príspevkov' %}
+
+{% block body %}
+  <h1>{{ block('title') }}</h1>
+  <ul>
+    {% for post in posts %}
+        <li><a href="{{ path('post.view', {'slug': post.slug}) }}">{{ post.title }}</a>
+    {% else %}
+        <li>Žiaden príspevok
+    {% endfor %}
+  </ul>
+{% endblock %}

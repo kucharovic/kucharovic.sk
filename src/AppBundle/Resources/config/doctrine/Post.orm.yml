@@ -1,0 +1,25 @@
+AppBundle\Entity\Post:
+    type: entity
+    table: _post
+    repositoryClass: AppBundle\Entity\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            unique: true
+            length: 255
+        perex:
+            type: text
+        content:
+            type: text
+        publishedAt:
+            type: datetime
+            column: published_at

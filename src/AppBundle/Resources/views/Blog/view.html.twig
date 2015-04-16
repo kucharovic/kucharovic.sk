@@ -1,0 +1,11 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title post.title %}
+
+{% block body %}
+  <h1>{{ block('title') }}</h1>
+
+  {{ post.perex|raw }}
+  {{ post.content|raw }}
+
+{% endblock %}

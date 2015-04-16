@@ -1,3 +1,13 @@
 homepage:
     path:     /
     defaults: { _controller: AppBundle:Homepage:view }
+
+post.list:
+    path:     /blog/{page}
+    defaults: { _controller: AppBundle:Blog:list, page: 1 }
+    requirements:
+        page:  \d+
+
+post.view:
+    path:     /blog/{slug}
+    defaults: { _controller: AppBundle:Blog:view }
