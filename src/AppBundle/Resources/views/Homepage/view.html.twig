@@ -1,5 +1,53 @@
-{% extends 'AppBundle::layout.html.twig' %}
+<!DOCTYPE HTML>
+<html itemscope itemtype="http://schema.org/Person">
+<head>
+  <meta charset="utf-8">
+  <meta itemprop="name" content="Jakub Kucharovic">
+  <meta itemprop="jobTitle" content="web developer">
+    <meta itemprop="image" content="http://kucharovic.sk/assets/img/photo.jpg">
+    <meta itemprop="url" content="http://kucharovic.sk/">
+  <meta itemprop="gender" content="Male">
+  <link href="http://www.myopenid.com/server" rel="openid.server">
+  <link href="http://kucharovic.myopenid.com" rel="openid.delegate">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+  <link href="/assets/css/stylesheet.css" rel="stylesheet" type="text/css">
 
-{% block body %}
-  It's work!
-{% endblock %}
+  <title>Jakub Kucharovic</title>
+<body>
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <meta itemprop="addressLocality" content="Ostrava">
+  </div>
+  <h1>Jakub Kucharovic</h1>
+<p>
+  web developer
+</p>
+<ul class="social-icons">
+  <li>
+    <a class="social-icon email" href="mailto:jakub&#64;kucharovic.sk" title="E-mailová adresa">
+      jakub&#64;kucharovic.sk
+    </a>
+
+  <li>
+    <a class="social-icon google" href="https://plus.google.com/110283236721497573515?rel=author" title="Profil na Google+">
+      Google plus
+    </a>
+
+  <li>
+    <a class="social-icon twitter" href="http://twitter.com/jkucharovic" title="Účet na Twitter">
+      Twitter
+    </a>
+
+  <li>
+    <a class="social-icon stackoverflow" href="http://stackoverflow.com/users/1178578/jkucharovic" title="Profil na Stackoverflow"> Stackoverflow
+    </a>
+  <li>
+    <a class="social-icon github" href="https://github.com/kucharovic" title="Účet na GitHub">
+      GitHub
+    </a>
+</ul>
+  <script src="/assets/js/analytics.js"></script>
+  <script>
+    _ga.create('UA-30796564-1','kucharovic.sk');_gaq.push(['_trackPageview']);
+    for(var i = 0, l = document.links, p = l.length; i < p; i++) l[i].onmouseover = function(){_gaq.push(['_trackEvent', 'Social', 'Visit', this.className.replace('social-icon ','')]);};
+  </script>
+</body>
