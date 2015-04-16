@@ -7,6 +7,11 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="/assets/js/analytics.js"></script>
+            <script>
+                _ga.create('UA-30796564-1','kucharovic.sk');_gaq.push(['_trackPageview']);
+            </script>
+        {% endblock %}
     </body>
 </html>
