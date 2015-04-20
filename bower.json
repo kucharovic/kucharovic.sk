@@ -1,0 +1,20 @@
+{
+  "name": "kucharovic.sk",
+  "version": "0.0.1",
+  "authors": [
+    "Jakub Kucharovic <j.kucharovic@gmail.com>"
+  ],
+  "description": "My homepage",
+  "license": "MIT",
+  "homepage": "http://kucharovic.sk",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-code-prettify": "~1.0.4"
+  }
+}
