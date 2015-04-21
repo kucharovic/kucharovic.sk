@@ -6,7 +6,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('assets', function() {
-  gulp.src('src/AppBundle/Resources/public/**')
+  gulp.src('app/Resources/public/**')
     .pipe(
       gulp.dest('web/assets')
     )

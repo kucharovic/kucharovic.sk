@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class SitemapController extends Controller
 {
     /**
-     * @Template
+     * @Template("sitemap/view.xml.twig")
      */
     public function viewAction()
     {

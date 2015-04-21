@@ -9,7 +9,7 @@ use AppBundle\Entity\Post;
 class BlogController extends Controller
 {
     /**
-     * @Template
+     * @Template("blog/list.html.twig")
      */
     public function listAction()
     {
@@ -20,7 +20,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Template
+     * @Template("blog/view.html.twig")
      */
     public function viewAction(Post $post)
     {}
