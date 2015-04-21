@@ -13,5 +13,5 @@ post.view:
     defaults: { _controller: AppBundle:Blog:view }
 
 sitemap:
-    path:     /sitemap.{_format}
+    path:     /sitemap.xml
     defaults: { _controller: AppBundle:Sitemap:view, _format: xml }
