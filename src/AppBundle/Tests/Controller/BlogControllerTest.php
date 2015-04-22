@@ -23,8 +23,8 @@ class BlogControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/blog');
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
-        $this->assertTrue($crawler->filter('title:contains("Zoznam príspevkov")')->count() == 1, 'Title element missmatch');
-        $this->assertTrue($crawler->filter('body ul > li')->count() > 0, 'No post loaded');
+        $this->assertContains('Zoznam príspevkov', $crawler->filter('title')->text(), 'Title element missmatch');
+        $this->assertGreaterThan(0, $crawler->filter('body ul > li')->count(), 'No post loaded');
     }
 
     public function testTag()
@@ -32,8 +32,8 @@ class BlogControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/blog/stitok/general');
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
-        $this->assertTrue($crawler->filter('title:contains("General")')->count() == 1, 'Title element missmatch');
-        $this->assertTrue($crawler->filter('body ul > li')->count() > 0, 'No post loaded');
+        $this->assertContains('General', $crawler->filter('title')->text(), 'Title element missmatch');
+        $this->assertCount(1, $crawler->filter('body ul > li'), 'No post loaded');
     }
 
     public function testViewPost()
@@ -41,7 +41,7 @@ class BlogControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/blog/lorem-ipsum');
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
-        $this->assertTrue($crawler->filter('title:contains("Lorem ipsum")')->count() == 1, 'Title element missmatch');
+        $this->assertContains('Lorem ipsum', $crawler->filter('title')->text(), 'Title element missmatch');
     }
 
     public function testNotFoundPost()

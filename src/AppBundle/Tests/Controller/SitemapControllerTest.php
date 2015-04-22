@@ -23,6 +23,6 @@ class SitemapControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/sitemap.xml');
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
-        $this->assertTrue($crawler->filter('url')->count() > 2, 'No post loaded');
+        $this->assertCount(3, $crawler->filter('url'), 'No post loaded from database');
     }
 }

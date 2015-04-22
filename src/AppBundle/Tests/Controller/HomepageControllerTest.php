@@ -14,6 +14,6 @@ class HomepageControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/');
 
         $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode(), 'HTTP Response fails');
-        $this->assertTrue($crawler->filter('title:contains("Jakub Kucharovic")')->count() == 1, 'Title element missmatch');
+        $this->assertContains('Jakub Kucharovic', $crawler->filter('title')->text(), 'Title element missmatch');
     }
 }
