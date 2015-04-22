@@ -12,7 +12,7 @@ class SitemapControllerTest extends WebTestCase
         $this->client = static::createClient();
 
         $fixtures = [
-            'AppBundle\DataFixtures\ORM\LoadPostsData',
+            'AppBundle\DataFixtures\ORM\LoadData',
         ];
 
         $this->loadFixtures($fixtures);

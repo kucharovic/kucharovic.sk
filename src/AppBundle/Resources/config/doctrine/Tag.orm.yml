@@ -1,0 +1,22 @@
+AppBundle\Entity\Tag:
+    type: entity
+    table: _tag
+    repositoryClass: AppBundle\Entity\TagRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            unique: true
+            length: 255
+    manyToMany:
+       posts:
+         targetEntity: AppBundle\Entity\Post
+         mappedBy: tags

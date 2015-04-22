@@ -12,7 +12,7 @@ class BlogControllerTest extends WebTestCase
         $this->client = static::createClient();
 
         $fixtures = [
-            'AppBundle\DataFixtures\ORM\LoadPostsData',
+            'AppBundle\DataFixtures\ORM\LoadData',
         ];
 
         $this->loadFixtures($fixtures);
@@ -24,6 +24,15 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
         $this->assertTrue($crawler->filter('title:contains("Zoznam príspevkov")')->count() == 1, 'Title element missmatch');
+        $this->assertTrue($crawler->filter('body ul > li')->count() > 0, 'No post loaded');
+    }
+
+    public function testTag()
+    {
+        $crawler = $this->client->request('GET', '/blog/stitok/general');
+
+        $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
+        $this->assertTrue($crawler->filter('title:contains("General")')->count() == 1, 'Title element missmatch');
         $this->assertTrue($crawler->filter('body ul > li')->count() > 0, 'No post loaded');
     }
 

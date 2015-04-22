@@ -23,3 +23,9 @@ AppBundle\Entity\Post:
         publishedAt:
             type: datetime
             column: published_at
+    manyToMany:
+        tags:
+            targetEntity: AppBundle\Entity\Tag
+            inversedBy: posts
+            cascade:
+                - persist

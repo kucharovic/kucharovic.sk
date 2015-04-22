@@ -8,6 +8,10 @@ post.list:
     requirements:
         page:  \d+
 
+post.tag:
+    path:     /blog/stitok/{slug}
+    defaults: { _controller: AppBundle:Blog:tag }
+
 post.view:
     path:     /blog/{slug}
     defaults: { _controller: AppBundle:Blog:view }
