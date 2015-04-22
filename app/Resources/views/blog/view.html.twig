@@ -3,10 +3,21 @@
 {% block title post.title %}
 
 {% block body %}
-  <h1>{{ block('title') }}</h1>
+  <article itemscope="" itemtype="http://schema.org/BlogPosting">
 
-  {{ post.perex|raw }}
-  {{ post.content|raw }}
+    <header>
+      <h1 itemprop="name headline">{{ block('title') }}</h1>
+      <p>
+        <time pubdate datetime="{{ post.publishedAt|date(constant('DATE_W3C')) }}" itemprop="datePublished">{{ post.publishedAt|date('d.m.Y') }}</time>
+      </p>
+    </header>
+
+    <div class="content" itemprop="articleBody">
+    {{ post.perex|raw }}
+    {{ post.content|raw }}
+    </div>
+
+  </article>
 
   <p>
     <a href="{{ path('post.list') }}">&laquo; Späť na zoznam</a>
