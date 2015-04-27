@@ -1,0 +1,10 @@
+{
+  "name": "kucharovic.sk",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-less": "*",
+    "gulp-cssmin": "*",
+    "gulp-rename": "*"
+  }
+}

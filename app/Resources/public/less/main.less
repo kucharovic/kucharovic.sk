@@ -1,0 +1,25 @@
+@import url(//fonts.googleapis.com/css?family=Lora&subset=latin,latin-ext);
+@import url(//fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
+@desktop:   ~"only screen and (min-width: 960px)";
+@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+
+body {
+  font-family: 'Lora', serif;
+  margin: 1em 0.5em;
+  max-width: 50em;
+}
+
+@media @desktop {
+  body {
+    margin: 4em auto 6em;
+  }
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+abbr {
+  text-transform: none;
+}
