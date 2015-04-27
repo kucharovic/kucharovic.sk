@@ -4,6 +4,17 @@
 @desktop:   ~"only screen and (min-width: 960px)";
 @tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
 
+@font-size-base:   18px;
+@font-size-large:  ceil((@font-size-base * 1.25));  // ~23px
+@font-size-small:  ceil((@font-size-base * 0.85));  // ~15px
+
+@font-size-h1:     floor((@font-size-base * 2.6));  // ~47px
+@font-size-h2:     floor((@font-size-base * 2.15)); // ~39px
+@font-size-h3:     ceil((@font-size-base * 1.7));   // ~31px
+@font-size-h4:     ceil((@font-size-base * 1.25));  // ~23px
+@font-size-h5:     @font-size-base;
+@font-size-h6:     ceil((@font-size-base * 0.85));  // ~15px
+
 body {
   font-family: 'Lora', serif;
   margin: 1em 0.5em;
@@ -19,6 +30,12 @@ body {
 h1,h2,h3,h4,h5 {
   font-family: 'Open Sans', sans-serif;
 }
+h1 { font-size: @font-size-h1; }
+h2 { font-size: @font-size-h2; }
+h3 { font-size: @font-size-h3; }
+h4 { font-size: @font-size-h4; }
+h5 { font-size: @font-size-h5; }
+h6 { font-size: @font-size-h6; }
 
 abbr {
   text-transform: none;
