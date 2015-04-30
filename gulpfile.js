@@ -1,7 +1,9 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
     cssmin = require('gulp-cssmin'),
-    rename = require('gulp-rename')
+    rename = require('gulp-rename'),
+    sys = require('sys'),
+    exec = require('gulp-exec')
 ;
 
 gulp.task('styles', function() {
@@ -47,6 +49,15 @@ gulp.task('scripts', function() {
       gulp.dest('web/assets/js')
     )
   ;
+});
+
+gulp.task('test', function() {
+    gulp.src('./src/AppBundle/Tests/**/*Test.php').pipe(
+        exec('phpunit -c app/', function(error, stdout){
+            sys.puts(stdout); 
+            return false;
+        })
+    );
 });
 
 gulp.task('default', ['styles', 'scripts', 'images']);

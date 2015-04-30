@@ -5,6 +5,8 @@
     "gulp": "^3.8.7",
     "gulp-less": "*",
     "gulp-cssmin": "*",
-    "gulp-rename": "*"
+    "gulp-rename": "*",
+    "sys": "*",
+    "gulp-exec": "*"
   }
 }
