@@ -24,7 +24,7 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
         $this->assertContains('Zoznam príspevkov', $crawler->filter('title')->text(), 'Title element missmatch');
-        $this->assertGreaterThan(0, $crawler->filter('body ul > li')->count(), 'No post loaded');
+        $this->assertGreaterThan(0, $crawler->filter('body article')->count(), 'No post loaded');
     }
 
     public function testTag()
@@ -33,7 +33,7 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
         $this->assertContains('General', $crawler->filter('title')->text(), 'Title element missmatch');
-        $this->assertCount(1, $crawler->filter('body ul > li'), 'No post loaded');
+        $this->assertCount(1, $crawler->filter('body article'), 'No post loaded');
     }
 
     public function testViewPost()

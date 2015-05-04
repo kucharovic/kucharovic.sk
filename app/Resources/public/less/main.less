@@ -47,3 +47,25 @@ code {
   color: #333;
   white-space: pre-wrap;
 }
+
+.article-list {
+  margin-top: 1.5em;
+  header {
+    h2 {
+      font-size: @font-size-h3;
+    }
+    p {
+      margin-bottom: 0.75em;
+      font-size: 85%;
+    }
+  }
+  p + p {
+    text-indent: 0;
+  }
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+}

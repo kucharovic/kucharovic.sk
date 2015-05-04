@@ -1,0 +1,26 @@
+<div class="article-list">
+  {% for post in posts %}
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h2 itemprop="name headline">
+        <a href="{{ path('post.view', {'slug': post.slug}) }}">{{ post.title }}</a>
+      </h2>
+      <p>
+        <time pubdate datetime="{{ post.publishedAt|date(constant('DATE_W3C')) }}" itemprop="datePublished">{{ post.publishedAt|date('d.m.Y') }}</time>, <b>Štítky</b>:
+        {% for tag in post.tags %}
+          <a href="{{ path('post.tag', {'slug': tag.slug}) }}">{{ tag }}</a>{% if false == loop.last %}, {% endif %}
+        {% endfor %}
+      </p>
+    </header>
+    <div class="content" itemprop="articleBody">
+      {{ post.perex|raw }}
+    </div>
+    <p>
+      <a href="{{ path('post.view', {'slug': post.slug}) }}">Celý článek &raquo;</a>
+    </p>
+    </article>
+    {% if loop.last is sameas(false) %}<hr>{% endif %}
+    {% else %}
+      <p>Žiaden príspevok.</p>
+  {% endfor %}
+</div>
