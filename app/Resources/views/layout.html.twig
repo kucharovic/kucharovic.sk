@@ -5,13 +5,41 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{% block title %}{% endblock %} | Jakub Kucharovic</title>
         {% block stylesheets %}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-        <link rel="stylesheet" href="/assets/css/typeplate.css">
         <link rel="stylesheet" href="/assets/css/compiled.min.css">
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <header class="blog-header">
+                        <h1>
+                            <a href="{{ path('post.list') }}">Jakub Kucharovic</a>
+                            <small>weblog</small>
+                        </h1>
+                    </header>
+                </div>
+            </div>
+            <div class="row">
+                <div id="content" class="col-md-9" role="main">
+                {% block body %}{% endblock %}
+                </div>
+                <div id="sidebar" class="col-md-3">
+                {% block sidebar %}
+                    <aside>
+                        <img src="/assets/img/photo.jpg" class="img-thumbnail" alt="Jakub Kucharovic">
+                        <p>
+                            Volám sa Jakub Kucharovic, pracujem ako webový vývojár.
+                        </p>
+                        <strong ></strong>
+                    </aside>
+                {% endblock %}
+                </div>
+            </div>
+            <footer role="contentinfo">
+                &copy; Jakub Kucharovic, {{ 'now'|date('Y') }}
+            </footer>
+        </div>
         {% block javascripts %}
             <script src="/assets/js/analytics.js"></script>
             <script>

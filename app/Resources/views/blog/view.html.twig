@@ -23,20 +23,19 @@
   </article>
 
   <p>
-    <a href="{{ path('post.list') }}">&laquo; Späť na zoznam</a>
+    <a href="{{ path('post.list') }}">&larr; Späť na zoznam</a>
   </p>
 {% endblock %}
 
 {% block stylesheets %}
   {{ parent() }}
-  <link rel="stylesheet" href="/assets/css/prettify.min.css">
-  <link rel="stylesheet" href="/assets/css/sunburst.css">
+  <link rel="stylesheet" href="/assets/css/monokai_sublime.css">
 {% endblock %}
 
 {% block javascripts %}
   {{ parent() }}
-  <script src="/assets/js/prettify.min.js"></script>
+  <script src="/assets/js/highlight.pack.js"></script>
   <script>
-    window.addEventListener("load", prettyPrint, false); //W3C
+    hljs.initHighlightingOnLoad();
   </script>
 {% endblock %}

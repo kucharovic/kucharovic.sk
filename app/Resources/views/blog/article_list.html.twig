@@ -16,7 +16,7 @@
       {{ post.perex|raw }}
     </div>
     <p>
-      <a href="{{ path('post.view', {'slug': post.slug}) }}">Celý článok &raquo;</a>
+      <a href="{{ path('post.view', {'slug': post.slug}) }}">Celý článok &rarr;</a>
     </p>
     </article>
     {% if loop.last is sameas(false) %}<hr>{% endif %}

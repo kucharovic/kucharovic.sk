@@ -1,71 +1,24 @@
+// Fonts
 @import url(//fonts.googleapis.com/css?family=Lora&subset=latin,latin-ext);
 @import url(//fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
 
-@desktop:   ~"only screen and (min-width: 960px)";
-@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
+// Core variables and mixins
+@import "../../../../bower_components/bootstrap/less/variables";
+@import "../../../../bower_components/bootstrap/less/mixins";
 
-@font-size-base:   18px;
-@font-size-large:  ceil((@font-size-base * 1.25));  // ~23px
-@font-size-small:  ceil((@font-size-base * 0.85));  // ~15px
+// Reset and dependencies
+@import "../../../../bower_components/bootstrap/less/normalize";
+@import "../../../../bower_components/bootstrap/less/print";
+@import "../../../../bower_components/bootstrap/less/glyphicons";
 
-@font-size-h1:     floor((@font-size-base * 2.6));  // ~47px
-@font-size-h2:     floor((@font-size-base * 2.15)); // ~39px
-@font-size-h3:     ceil((@font-size-base * 1.7));   // ~31px
-@font-size-h4:     ceil((@font-size-base * 1.25));  // ~23px
-@font-size-h5:     @font-size-base;
-@font-size-h6:     ceil((@font-size-base * 0.85));  // ~15px
+// Core CSS
+@import "../../../../bower_components/bootstrap/less/scaffolding";
+@import "../../../../bower_components/bootstrap/less/grid";
+@import "../../../../bower_components/bootstrap/less/tables";
 
-body {
-  font-family: 'Lora', serif;
-  margin: 1em 0.5em;
-  max-width: 50em;
-}
+// Utility classes
+@import "../../../../bower_components/bootstrap/less/utilities";
+@import "../../../../bower_components/bootstrap/less/responsive-utilities";
 
-@media @desktop {
-  body {
-    margin: 4em auto 6em;
-  }
-}
-
-h1,h2,h3,h4,h5 {
-  font-family: 'Open Sans', sans-serif;
-}
-h1 { font-size: @font-size-h1; }
-h2 { font-size: @font-size-h2; }
-h3 { font-size: @font-size-h3; }
-h4 { font-size: @font-size-h4; }
-h5 { font-size: @font-size-h5; }
-h6 { font-size: @font-size-h6; }
-
-abbr {
-  text-transform: none;
-}
-
-code {
-  background-color: lightgrey;
-  padding: .2em .4em;
-  color: #333;
-  white-space: pre-wrap;
-}
-
-.article-list {
-  margin-top: 1.5em;
-  header {
-    h2 {
-      font-size: @font-size-h3;
-    }
-    p {
-      margin-bottom: 0.75em;
-      font-size: 85%;
-    }
-  }
-  p + p {
-    text-indent: 0;
-  }
-  hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eee;
-  }
-}
+// Custom
+@import "frontend";

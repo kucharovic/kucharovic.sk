@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "google-code-prettify": "~1.0.4",
-    "typeplate-starter-kit": "~2.1.0"
+    "bootstrap": "~3.3.4",
+    "highlightjs": "~8.5.0"
   }
 }

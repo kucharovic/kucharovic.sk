@@ -16,9 +16,7 @@ gulp.task('styles', function() {
     )
   ;
   gulp.src([
-    'bower_components/typeplate-starter-kit/css/typeplate.css',
-    'bower_components/google-code-prettify/bin/prettify.min.css',
-    'bower_components/google-code-prettify/styles/sunburst.css'
+    'bower_components/highlightjs/styles/monokai_sublime.css'
     ])
     .pipe(
       gulp.dest('web/assets/css')
@@ -44,7 +42,7 @@ gulp.task('scripts', function() {
       gulp.dest('web/assets/js')
     )
   ;
-  gulp.src('bower_components/google-code-prettify/bin/prettify.min.js')
+  gulp.src('bower_components/highlightjs/highlight.pack.js')
     .pipe(
       gulp.dest('web/assets/js')
     )
@@ -54,7 +52,7 @@ gulp.task('scripts', function() {
 gulp.task('test', function() {
     gulp.src('./src/AppBundle/Tests/**/*Test.php').pipe(
         exec('phpunit -c app/', function(error, stdout){
-            sys.puts(stdout); 
+            sys.puts(stdout);
             return false;
         })
     );
