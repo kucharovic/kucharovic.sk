@@ -6,6 +6,8 @@ var gulp = require('gulp'),
     exec = require('gulp-exec')
 ;
 
+var bower = 'bower_components/';
+
 gulp.task('styles', function() {
   gulp.src('app/Resources/public/less/main.less')
     .pipe(less())
@@ -16,7 +18,7 @@ gulp.task('styles', function() {
     )
   ;
   gulp.src([
-    'bower_components/highlightjs/styles/monokai_sublime.css'
+    bower + 'highlightjs/styles/monokai_sublime.css'
     ])
     .pipe(
       gulp.dest('web/assets/css')
@@ -25,6 +27,13 @@ gulp.task('styles', function() {
   gulp.src('app/Resources/public/css/*')
     .pipe(
       gulp.dest('web/assets/css')
+    )
+  ;
+});
+gulp.task('fonts', function() {
+  gulp.src(bower + 'bootstrap/fonts/*')
+    .pipe(
+      gulp.dest('web/assets/fonts')
     )
   ;
 });
@@ -42,7 +51,7 @@ gulp.task('scripts', function() {
       gulp.dest('web/assets/js')
     )
   ;
-  gulp.src('bower_components/highlightjs/highlight.pack.js')
+  gulp.src(bower + 'highlightjs/highlight.pack.js')
     .pipe(
       gulp.dest('web/assets/js')
     )
@@ -58,4 +67,4 @@ gulp.task('test', function() {
     );
 });
 
-gulp.task('default', ['styles', 'scripts', 'images']);
+gulp.task('default', ['styles', 'fonts', 'scripts', 'images']);

@@ -49,6 +49,21 @@ abbr {
   }
 }
 
+article > header > p {
+    time:before,
+    b:before {
+        &:extend(.glyphicon);
+        margin-right: .3em;
+    }
+    time:before {
+        &:extend(.glyphicon-time:before);
+    }
+    b:before {
+        &:extend(.glyphicon-tags:before);
+        margin-left: .3em;
+    }
+}
+
 #sidebar {
     padding-top: 1.8em;
     font-size: .8em;
