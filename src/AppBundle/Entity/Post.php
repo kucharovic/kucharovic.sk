@@ -27,6 +27,11 @@ class Post
     /**
      * @var string
      */
+    private $description;
+
+    /**
+     * @var string
+     */
     private $perex;
 
     /**
@@ -106,6 +111,29 @@ class Post
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Post
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**

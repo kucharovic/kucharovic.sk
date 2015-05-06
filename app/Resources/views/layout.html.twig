@@ -3,6 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        {% set description = block('description') %}
+        {% if description is not empty %}
+        <meta name="description" content="{{ description }}">
+        {% endif %}
         <title>{% block title %}{% endblock %} | Jakub Kucharovic</title>
         {% block stylesheets %}
         <link rel="stylesheet" href="/assets/css/compiled.min.css">

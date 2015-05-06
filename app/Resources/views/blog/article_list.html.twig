@@ -11,6 +11,7 @@
           <a href="{{ path('post.tag', {'slug': tag.slug}) }}">{{ tag }}</a>{% if false == loop.last %}, {% endif %}
         {% endfor %}
       </p>
+      <meta itemprop="description" content="{{ post.description }}">
     </header>
     <div class="content">
       {{ post.perex|raw }}

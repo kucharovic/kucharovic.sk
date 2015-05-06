@@ -16,6 +16,9 @@ AppBundle\Entity\Post:
             type: string
             unique: true
             length: 255
+        description:
+            type: string
+            length: 255
         perex:
             type: text
         content:

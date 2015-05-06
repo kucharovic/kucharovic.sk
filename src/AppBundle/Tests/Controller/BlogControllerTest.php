@@ -24,6 +24,7 @@ class BlogControllerTest extends WebTestCase
 
         $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
         $this->assertContains('Weblog', $crawler->filter('title')->text(), 'Title element missmatch');
+        $this->assertGreaterThan(0, $crawler->filter('meta[itemprop=description]')->count(), 'No meta descriptions');
         $this->assertGreaterThan(0, $crawler->filter('body article')->count(), 'No post loaded');
     }
 
