@@ -3,9 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@jkucharovic">
+        <meta name="twitter:creator" content="@jkucharovic">
+        <meta property="og:url" content="{{ app.request.uri }}">
+        <meta property="og:title" content="{{ block('title') }}">
         {% set description = block('description') %}
         {% if description is not empty %}
         <meta name="description" content="{{ description }}">
+        <meta property="og:description" content="{{ description }}">
         {% endif %}
         <title>{% block title %}{% endblock %} | Jakub Kucharovic</title>
         {% block stylesheets %}
