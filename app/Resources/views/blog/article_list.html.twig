@@ -1,6 +1,6 @@
 <div class="article-list">
   {% for post in posts %}
-  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h2 itemprop="name headline">
         <a href="{{ path('post.view', {'slug': post.slug}) }}">{{ post.title }}</a>
@@ -12,11 +12,11 @@
         {% endfor %}
       </p>
     </header>
-    <div class="content" itemprop="articleBody">
+    <div class="content">
       {{ post.perex|raw }}
     </div>
     <p>
-      <a href="{{ path('post.view', {'slug': post.slug}) }}">Celý článok &rarr;</a>
+      <a itemprop="url" href="{{ path('post.view', {'slug': post.slug}) }}">Celý článok &rarr;</a>
     </p>
     </article>
     {% if loop.last is sameas(false) %}<hr>{% endif %}

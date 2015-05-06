@@ -8,13 +8,13 @@
         <link rel="stylesheet" href="/assets/css/compiled.min.css">
         {% endblock %}
     </head>
-    <body>
+    <body itemscope itemtype="http://schema.org/Blog">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <header class="blog-header">
+                    <header class="blog-header" itemprop="name">
                         <h1>
-                            <a href="{{ path('post.list') }}">Jakub Kucharovic</a>
+                            <a itemprop="url" href="{{ path('post.list') }}">Jakub Kucharovic</a>
                             <small>weblog</small>
                         </h1>
                     </header>
@@ -26,10 +26,10 @@
                 </div>
                 <div id="sidebar" class="col-md-3">
                 {% block sidebar %}
-                    <aside>
-                        <img src="/assets/img/photo.jpg" class="img-thumbnail" alt="Jakub Kucharovic">
+                    <aside itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <img src="/assets/img/photo.jpg" class="img-thumbnail" alt="Jakub Kucharovic" itemprop="image">
                         <p>
-                            Volám sa Jakub Kucharovic, pracujem ako webový vývojár.
+                            Volám sa <span itemprop="name">Jakub Kucharovic</span>, pracujem ako <span itemprop="jobtitle">webový vývojár</span>
                         </p>
                         <strong ></strong>
                     </aside>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <footer role="contentinfo">
-                &copy; Jakub Kucharovic, {{ 'now'|date('Y') }}
+                &copy; <span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Jakub Kucharovic</span></span>, <span itemprop="copyrightYear">{{ 'now'|date('Y') }}</span>
             </footer>
         </div>
         {% block javascripts %}
