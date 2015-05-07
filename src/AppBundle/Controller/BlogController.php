@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Post;
 use AppBundle\Entity\Tag;
@@ -37,4 +38,12 @@ class BlogController extends Controller
      */
     public function viewAction(Post $post)
     {}
+
+    /**
+     * @ParamConverter
+     */
+    public function shortlinkAction(Post $post)
+    {
+        return $this->redirectToRoute('post.view', ['slug' => $post->getSlug()], 301);
+    }
 }

@@ -45,9 +45,24 @@ class BlogControllerTest extends WebTestCase
         $this->assertContains('Lorem ipsum', $crawler->filter('title')->text(), 'Title element missmatch');
     }
 
+    public function testShortlinkRedirect()
+    {
+        $crawler = $this->client->request('GET', '/1');
+
+        $this->assertEquals(Response::HTTP_MOVED_PERMANENTLY, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
+        $this->assertTrue($this->client->getResponse()->isRedirect('/blog/lorem-ipsum'), 'HTTP redirect to wrong URL');
+    }
+
     public function testNotFoundPost()
     {
         $crawler = $this->client->request('GET', '/blog/this-should-not-exists');
+
+        $this->assertEquals(Response::HTTP_NOT_FOUND, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
+    }
+
+    public function testNotFoundShortlink()
+    {
+        $crawler = $this->client->request('GET', '/999999');
 
         $this->assertEquals(Response::HTTP_NOT_FOUND, $this->client->getResponse()->getStatusCode(), 'HTTP Response fails');
     }

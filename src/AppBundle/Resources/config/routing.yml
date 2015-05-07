@@ -16,6 +16,12 @@ post.view:
     path:     /blog/{slug}
     defaults: { _controller: AppBundle:Blog:view }
 
+post.shortlink:
+    path:     /{id}
+    defaults: { _controller: AppBundle:Blog:shortlink }
+    requirements:
+        id:  \d+
+
 sitemap:
     path:     /sitemap.xml
     defaults: { _controller: AppBundle:Sitemap:view, _format: xml }
