@@ -12,8 +12,7 @@
         {% block meta %}{% endblock %}
         {% set description = block('description') %}
         {% if description is not empty %}
-        <meta name="description" content="{{ description }}">
-        <meta property="og:description" content="{{ description }}">
+        <meta property="og:description" name="description" content="{{ description }}">
         {% endif %}
         <title>{% block title %}{% endblock %} | Jakub Kucharovic</title>
         {% block stylesheets %}
