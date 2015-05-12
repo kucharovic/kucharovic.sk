@@ -10,9 +10,9 @@
     <header>
       <h1 itemprop="name headline">{{ block('title') }}</h1>
       <p>
-        <time pubdate datetime="{{ post.publishedAt|date(constant('DATE_W3C')) }}" itemprop="datePublished">{{ post.publishedAt|localizeddate('long', 'none') }}</time>,
+        <time pubdate datetime="{{ post.publishedAt|date(constant('DATE_W3C')) }}" itemprop="datePublished" title="Zverejnené {{ post.publishedAt|date('d.m.Y H:i') }}">{{ post.publishedAt|localizeddate('long', 'none') }}</time>,
         {% if post.modifiedAt %}
-        <time pubdate datetime="{{ post.modifiedAt|date(constant('DATE_W3C')) }}" itemprop="dateModified">{{ post.modifiedAt|localizeddate('long', 'none') }}</time>,
+        <time pubdate datetime="{{ post.modifiedAt|date(constant('DATE_W3C')) }}" itemprop="dateModified" title="Naposledy upravené {{ post.modifiedAt|date('d.m.Y H:i') }}">{{ post.modifiedAt|localizeddate('long', 'none') }}</time>,
         {% endif %}
         <b>Štítky</b>:
         {% for tag in post.tags %}
