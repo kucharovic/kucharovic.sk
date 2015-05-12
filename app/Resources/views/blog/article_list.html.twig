@@ -6,7 +6,11 @@
         <a href="{{ path('post.view', {'slug': post.slug}) }}">{{ post.title }}</a>
       </h2>
       <p>
-        <time pubdate datetime="{{ post.publishedAt|date(constant('DATE_W3C')) }}" itemprop="datePublished">{{ post.publishedAt|localizeddate('long', 'none') }}</time>, <b>Štítky</b>:
+        <time pubdate datetime="{{ post.publishedAt|date(constant('DATE_W3C')) }}" itemprop="datePublished">{{ post.publishedAt|localizeddate('long', 'none') }}</time>,
+        {% if post.modifiedAt %}
+        <time pubdate datetime="{{ post.modifiedAt|date(constant('DATE_W3C')) }}" itemprop="dateModified">{{ post.modifiedAt|localizeddate('long', 'none') }}</time>,
+        {% endif %}
+        <b>Štítky</b>:
         {% for tag in post.tags %}
           <a href="{{ path('post.tag', {'slug': tag.slug}) }}">{{ tag }}</a>{% if false == loop.last %}, {% endif %}
         {% endfor %}

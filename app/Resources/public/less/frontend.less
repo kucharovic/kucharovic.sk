@@ -58,6 +58,10 @@ article > header > p {
     time:before {
         &:extend(.glyphicon-time:before);
     }
+    time + time:before {
+        &:extend(.glyphicon-pencil:before);
+        margin-left: .3em;
+    }
     b:before {
         &:extend(.glyphicon-tags:before);
         margin-left: .3em;

@@ -10,7 +10,7 @@
    {% for post in posts %}
    <url>
         <loc>{{ url('post.view', {slug: post.slug}) }}</loc>
-        <lastmod>{{ post.publishedAt|date(constant('DATE_W3C')) }}</lastmod>
+        <lastmod>{{ (post.modifiedAt ?: post.publishedAt)|date(constant('DATE_W3C')) }}</lastmod>
    </url>
    {% endfor %}
 </urlset>
