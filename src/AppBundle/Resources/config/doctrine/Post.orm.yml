@@ -26,6 +26,10 @@ AppBundle\Entity\Post:
         publishedAt:
             type: datetime
             column: published_at
+        modifiedAt:
+            type: datetime
+            column: modified_at
+            nullable: true
     manyToMany:
         tags:
             targetEntity: AppBundle\Entity\Tag

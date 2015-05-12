@@ -45,6 +45,11 @@ class Post
     private $publishedAt;
 
     /**
+     * @var \DateTime
+     */
+    private $modifiedAt;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $tags;
@@ -203,6 +208,29 @@ class Post
     public function getPublishedAt()
     {
         return $this->publishedAt;
+    }
+
+    /**
+     * Set modifiedAt
+     *
+     * @param \DateTime $modifiedAt
+     * @return Post
+     */
+    public function setModifiedAt($modifiedAt)
+    {
+        $this->modifiedAt = $modifiedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get modifiedAt
+     *
+     * @return \DateTime
+     */
+    public function getModifiedAt()
+    {
+        return $this->modifiedAt;
     }
 
     /**
