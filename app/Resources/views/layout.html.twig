@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="sk">
-    <head>
+    <head prefix="og: http://ogp.me/ns# {% block ogp_namespace %}{% endblock %}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@jkucharovic">
         <meta name="twitter:creator" content="@jkucharovic">
+        <meta property="og:locale" content="sk_SK">
         <meta property="og:url" content="{{ app.request.uri }}">
         <meta property="og:title" content="{{ block('title') }}">
+        {% block meta %}{% endblock %}
         {% set description = block('description') %}
         {% if description is not empty %}
         <meta name="description" content="{{ description }}">
