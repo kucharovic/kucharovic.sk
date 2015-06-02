@@ -19,7 +19,9 @@ p > code {
     font-size: .85em;
 }
 
-abbr {
+abbr,
+em[title] {
+    &:extend(abbr[title]);
     cursor: help;
 }
 
