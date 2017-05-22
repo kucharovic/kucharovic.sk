@@ -28,8 +28,13 @@ DirectoryIndex app.php
     RewriteEngine On
 
     # Strip www prefix
+    RewriteCond %{HTTPS} off
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+    RewriteCond %{HTTPS} on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
