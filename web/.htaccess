@@ -27,12 +27,10 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Strip www prefix
+    # Redirect to HTTPS
     RewriteCond %{HTTPS} off
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
-    RewriteCond %{HTTPS} on
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # Strip www prefix
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
